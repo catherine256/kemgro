@@ -5,14 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $message = $_POST["message"];
   $subject = $_POST["subject"];
   
-  $to = "cnakyanzi2019@gmail.com";
+  $to = "criliteinvestments@gmail.com";
   $body = "Name: $name\nEmail: $email\nMessage: $message";
   
   // Send the email
   mail($to, $subject, $body);
   
   // Redirect to a thank you page
-  header("Location: thank_you.html");
+  header("Location: index.html");
   exit();
 }
 ?>
