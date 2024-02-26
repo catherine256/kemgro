@@ -40,20 +40,6 @@
     });
 
 
-    // Modal Video
-    var $videoSrc;
-    $('.btn-play').click(function () {
-        $videoSrc = $(this).data("src");
-    });
-    console.log($videoSrc);
-    $('#videoModal').on('shown.bs.modal', function (e) {
-        $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-    })
-    $('#videoModal').on('hide.bs.modal', function (e) {
-        $("#video").attr('src', $videoSrc);
-    })
-
-
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
@@ -168,6 +154,18 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Mobile nav toggle
      */
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var navbarCollapse = document.querySelector('#navbarCollapse');
+  
+      navbarToggler.addEventListener('click', function () {
+          if (navbarCollapse.classList.contains('show')) {
+              navbarCollapse.classList.remove('show');
+          } else {
+              navbarCollapse.classList.add('show');
+          }
+      });
+  });
     const mobileNavShow = document.querySelector('.mobile-nav-show');
     const mobileNavHide = document.querySelector('.mobile-nav-hide');
   
