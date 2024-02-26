@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $message, $headers)) {
         echo "success";
         header("Location: thanks.html");
-        exit();
     } else {
         echo "error";
     }
