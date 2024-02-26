@@ -10,13 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Here you can process the form data, such as sending an email to Kemgro with the submitted details.
     // Example:
-    $to = 'cnakyanzi2019@gmail.com'; // Change this to your email address
+    $to = 'mwessygodleeh@gmail.com'; // Change this to your email address
     $subject = 'Quote Request from ' . $name;
     $message = "Company: $company\nLocation: $location\nService Interested In: $service\nAdditional Details: $details\nName: $name\nEmail: $email\nPhone: $phone";
     $headers = "From: $email";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "success";
+        header("Location: thanks.html");
+        exit();
     } else {
         echo "error";
     }
