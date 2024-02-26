@@ -20,9 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "error";
     }
-
-    // Redirect to a thank you page
-  header("Location: index.html");
   exit();
 }
 ?>
